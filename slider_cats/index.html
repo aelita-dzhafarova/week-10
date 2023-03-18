@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #slider {
+            margin: 0 100px;
+        }
+
+        img {
+            padding: 60px;
+        }
+
+        button {
+            width: 150px;
+            height: 30px;
+            border-radius: 4px; 
+            border: none;
+            background-color: black;
+            color: white;
+        }
+
+        button:hover {
+            background-color: blueviolet;
+        }
+
+        button:active {
+            background-color: palevioletred;
+        }
+    </style>
+
+    <script>
+        const slide = ["chaton1.jpeg","chaton5.jpeg","chaton9.jpeg"];
+        let number = 0;
+
+        function changeSlide(direction) {
+            number = number + direction;
+            if (number === -1) number = slide.length -1;
+            if (number === slide.length) number = 0;
+
+            document.getElementById("slide").src = slide[number];        
+        }
+    </script>
+</head>
+<body>
+    <h1>Cats</h1>
+    <div id="slider">
+        <button id="prev" onclick="changeSlide(-1)">Previous</button>
+        <img id="slide" src="chaton1.jpeg" alt="cat">
+        <button id="next" onclick="changeSlide(1)">Next</button>
+    </div>
+</body>
+</html>

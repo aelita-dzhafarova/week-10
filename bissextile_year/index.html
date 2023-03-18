@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Введите год, чтобы узнать, является ли он високосным.</p>
+    <input class="year"></input>
+    <button class="button">Узнать</button>
+    <p>Результат: <span class="result"></span> </p>
+    <script>
+        function isBissextile(year) {
+            if(year % 4 === 0) {
+                if(year % 100 === 0) {
+                    if(year % 400 === 0) {
+                        console.log("Год НЕ високосный");
+                    }
+                    else console.log("Год НЕ високосный");  
+                } 
+                else console.log("Год високосный");  
+            } 
+            else console.log("Год НЕ високосный");
+        }
+    
+        isBissextile(2024);
+    </script>
+</body>
+</html>
